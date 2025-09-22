@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,116 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+
+.cards.cards19 {
+  background: #fff;
+  padding: 0;
+}
+
+.cards.cards19 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 28px 36px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (width <= 900px) {
+  .cards.cards19 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 24px 20px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards19 > ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 16px 0;
+  }
+}
+
+.cards.cards19 > ul > li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 14px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex row, align icon and text vertically on center for both blocks */
+.cards.cards19 > ul > li > .cards-card-body {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Icon container: size and vertical alignment */
+.cards.cards19 > ul > li > .cards-card-body:first-child {
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* Remove <p> margins, flex for consistent alignment */
+.cards.cards19 > ul > li > .cards-card-body:first-child p {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon image: slightly larger and optically centered */
+.cards.cards19 > ul > li > .cards-card-body:first-child p > img {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  display: inline-block;
+  object-fit: contain;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  padding: 0;
+  align-self: center;
+}
+
+/* Text container: flex for vertical centering */
+.cards.cards19 > ul > li > .cards-card-body:last-child {
+  flex: 1 1 auto;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text style: compact, left-aligned */
+.cards.cards19 > ul > li > .cards-card-body:last-child p {
+  font-size: 13px;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+}
+
+/* Remove default ul/li/p spacing within the block */
+.cards.cards19 ul, 
+.cards.cards19 ul > li, 
+.cards.cards19 .cards-card-body, 
+.cards.cards19 .cards-card-body p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
